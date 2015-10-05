@@ -398,6 +398,12 @@ class PaintEffectTool(LabelEffect.LabelEffectTool):
         self.scaleRadius(1.2)
       if key == 'minus' or key == 'underscore':
         self.scaleRadius(0.8)
+      if key == 'd':
+        smudge_state = int(self.parameterNode.GetParameter("PaintEffect,smudge"))
+        if smudge_state == 0:
+          self.parameterNode.SetParameter( "PaintEffect,smudge", "1" )
+        else:
+          self.parameterNode.SetParameter( "PaintEffect,smudge", "0" )
     else:
       pass
 
